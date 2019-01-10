@@ -35,9 +35,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openjdk.jmc</groupId>
-		<artifactId>missioncontrol.application.l10n</artifactId>
+		<artifactId>platform-definitions</artifactId>
 		<version>7.1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>org.openjdk.jmc.rcp.application.zh_CN</artifactId>
-	<packaging>eclipse-plugin</packaging>
+	<artifactId>platform-definition-oxygen</artifactId>
+	<packaging>eclipse-target-definition</packaging>
 </project>
