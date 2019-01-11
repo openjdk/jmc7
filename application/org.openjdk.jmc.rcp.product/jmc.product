@@ -46,15 +46,13 @@
    </configIni>
 
    <launcherArgs>
-      <!-- Note: if embedding a JDK, remember to override the -vm option on the various platforms to 
-           point to the relative path of your embedded JDK. e.g.
-           <programArgsMac>-ws cocoa -vm ../jdk/Contents/Home/bin/</programArgsMac> -->
       <programArgs>--launcher.appendVmargs
       </programArgs>
-      <programArgsLin></programArgsLin>
-      <programArgsMac>-ws cocoa
+      <programArgsLin>-vm /usr/bin/java
+      </programArgsLin>
+      <programArgsMac>-ws cocoa -vm ../jdk/Contents/Home/bin/
       </programArgsMac>
-      <programArgsWin>
+      <programArgsWin>-vm ./
       </programArgsWin>
       <vmArgs>-XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:FlightRecorderOptions=stackdepth=128 -XX:+FlightRecorder -XX:StartFlightRecording=name=JMC_Default,maxsize=100m -Djava.net.preferIPv4Stack=true -Djdk.attach.allowAttachSelf=true --add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=ALL-UNNAMED --add-exports=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED --add-exports=java.management/sun.management=ALL-UNNAMED --add-exports=java.management/sun.management.counter.perf=ALL-UNNAMED --add-exports=jdk.management.agent/jdk.internal.agent=ALL-UNNAMED --add-exports=jdk.attach/sun.tools.attach=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=jdk.attach/sun.tools.attach=ALL-UNNAMED
       </vmArgs>
@@ -98,7 +96,7 @@
       <plugin id="org.openjdk.jmc.rcp.application" autoStart="false" startLevel="5" />
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
       <plugin id="org.eclipse.equinox.util" autoStart="true" startLevel="2" />
