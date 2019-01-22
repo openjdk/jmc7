@@ -233,6 +233,7 @@
 					</execution>
 				</executions>
 				<configuration>
+					<format>'v'yyyyMMdd'-'HHmm</format>
 					<archive>
 						<manifestEntries>
 							<Built-By />
