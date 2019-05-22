@@ -353,10 +353,10 @@
 					<webAppSourceDirectory>${basedir}/target/repository/</webAppSourceDirectory>
 					<webApp>
 						<contextPath>/site</contextPath>
-                        <httpConnector>
-                            <port>8080</port>
-                        </httpConnector>
 					</webApp>
+					<httpConnector>
+						<port>8080</port>
+					</httpConnector>
 				</configuration>
 			</plugin>
 			<plugin>
