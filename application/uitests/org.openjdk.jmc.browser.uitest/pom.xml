@@ -101,11 +101,6 @@
 							</requirement>
 							<requirement>
 								<type>eclipse-feature</type>
-								<id>org.eclipse.equinox.p2.core.feature</id>
-								<versionRange>0.0.0</versionRange>
-							</requirement>
-							<requirement>
-								<type>eclipse-feature</type>
 								<id>org.eclipse.equinox.p2.rcp.feature</id>
 								<versionRange>0.0.0</versionRange>
 							</requirement>

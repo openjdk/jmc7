@@ -41,8 +41,10 @@
 	<artifactId>platform-definitions</artifactId>
 	<packaging>pom</packaging>
 	<modules>
-		<module>platform-definition-oxygen</module>
+		<!-- Photon will be deprecated eventually - don't use it! -->
 		<module>platform-definition-photon</module>
 		<module>platform-definition-2018-09</module>
+		<module>platform-definition-2018-12</module>
+		<module>platform-definition-2019-03</module>
 	</modules>
 </project>
