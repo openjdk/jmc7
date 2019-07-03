@@ -78,6 +78,9 @@
 								<artifact>
 									<id>org.owasp.encoder:encoder:1.2.1</id>
 								</artifact>
+								<artifact>
+									<id>org.hdrhistogram:HdrHistogram:2.1.11</id>
+								</artifact>
 							</artifacts>
 						</configuration>
 					</execution>
