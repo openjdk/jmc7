@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--   
-   Copyright (c) 2018, Oracle and/or its affiliates. All rights reserved.
-   
+<!--
+   Copyright (c) 2018, 2019, Oracle and/or its affiliates. All rights reserved.
+
    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-   
-   The contents of this file are subject to the terms of either the Universal Permissive License 
+
+   The contents of this file are subject to the terms of either the Universal Permissive License
    v 1.0 as shown at http://oss.oracle.com/licenses/upl
-   
+
    or the following license:
-   
+
    Redistribution and use in source and binary forms, with or without modification, are permitted
    provided that the following conditions are met:
-   
+
    1. Redistributions of source code must retain the above copyright notice, this list of conditions
    and the following disclaimer.
-   
+
    2. Redistributions in binary form must reproduce the above copyright notice, this list of
    conditions and the following disclaimer in the documentation and/or other materials provided with
    the distribution.
-   
+
    3. Neither the name of the copyright holder nor the names of its contributors may be used to
    endorse or promote products derived from this software without specific prior written permission.
-   
+
    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
    IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
    FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
@@ -35,7 +35,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openjdk.jmc</groupId>
 	<artifactId>external-dependencies</artifactId>
-	<packaging>pom</packaging>
+	<packaging>war</packaging>
 	<version>7.1.0-SNAPSHOT</version>
 	<build>
 		<plugins>
@@ -53,10 +53,10 @@
 								<!-- specify third party non-OSGi dependencies here -->
 								<!-- groupId:artifactId:version -->
 								<artifact>
-									<id>org.twitter4j:twitter4j-core:4.0.6</id>
+									<id>org.twitter4j:twitter4j-core:4.0.7</id>
 								</artifact>
 								<artifact>
-									<id>javax.mail:mailapi:1.4</id>
+									<id>com.sun.mail:jakarta.mail:1.6.3</id>
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
@@ -64,19 +64,13 @@
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>javax.mail:imap:1.4</id>
-								</artifact>
-								<artifact>
-									<id>javax.mail:pop3:1.4</id>
-								</artifact>
-								<artifact>
-									<id>javax.mail:smtp:1.4</id>
+									<id>com.sun.activation:jakarta.activation:1.2.1</id>
 								</artifact>
 								<artifact>
 									<id>javax.mail:dsn:1.4</id>
 								</artifact>
 								<artifact>
-									<id>org.owasp.encoder:encoder:1.2.1</id>
+									<id>org.owasp.encoder:encoder:1.2.2</id>
 								</artifact>
 								<artifact>
 									<id>org.hdrhistogram:HdrHistogram:2.1.11</id>
@@ -99,15 +93,18 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
+				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.5.v20120716</version>
+				<version>9.4.14.v20181114</version>
 				<configuration>
 					<scanIntervalSeconds>60</scanIntervalSeconds>
 					<webAppSourceDirectory>${basedir}/target/repository/</webAppSourceDirectory>
 					<webApp>
 						<contextPath>/site</contextPath>
 					</webApp>
+					<httpConnector>
+						<port>8080</port>
+					</httpConnector>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -126,7 +123,7 @@
 									<version>[1.8.0-40,)</version>
 									<message>Building JMC requires Java 8 version JDK 1.8.0_40 or later</message>
 								</requireJavaVersion>
-							</rules>		
+							</rules>
 						</configuration>
 					</execution>
 					<execution>
