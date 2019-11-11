@@ -37,7 +37,7 @@
 	<parent>
 		<groupId>org.openjdk.jmc</groupId>
 		<artifactId>missioncontrol.core</artifactId>
-		<version>7.1.0-SNAPSHOT</version>
+		<version>7.1.0</version>
 	</parent>
 	<artifactId>coverage</artifactId>
 	<name>Code coverage report jmc/core</name>
