@@ -466,7 +466,7 @@ class TypeManager {
 			}
 			reader = new PoolReader(fieldType.constants, reader.getContentType());
 		}
-		return f.isArray() ? new ArrayReader(reader) : reader;
+		return f.isArray() ? new ArrayReader(reader, header) : reader;
 	}
 
 	private static String buildLabel(String id, AnnotatedElement element) {
