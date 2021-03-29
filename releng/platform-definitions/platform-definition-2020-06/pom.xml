@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-   Copyright (c) 2018, 2019, Oracle and/or its affiliates. All rights reserved.
+   Copyright (c) 2020, Oracle and/or its affiliates. All rights reserved.
+   Copyright (c) 2020, Datadog, Inc. All rights reserved.
 
    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
 
@@ -35,19 +36,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openjdk.jmc</groupId>
-		<artifactId>missioncontrol.releng</artifactId>
+		<artifactId>platform-definitions</artifactId>
 		<version>7.1.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>platform-definitions</artifactId>
-	<packaging>pom</packaging>
-	<modules>
-		<!-- Photon will be deprecated eventually - don't use it! -->
-		<module>platform-definition-photon</module>
-		<module>platform-definition-2018-09</module>
-		<module>platform-definition-2018-12</module>
-		<module>platform-definition-2019-03</module>
-		<module>platform-definition-2019-06</module>
-		<module>platform-definition-2019-09</module>
-		<module>platform-definition-2020-06</module>
-	</modules>
+	<artifactId>platform-definition-2020-06</artifactId>
+	<packaging>eclipse-target-definition</packaging>
+
+	<properties>
+		<spotless.config.path>${basedir}/../../../configuration/ide/eclipse/formatting/formatting.xml</spotless.config.path>
+	</properties>
 </project>
